@@ -1,75 +1,169 @@
-# 📝 Quick Note Application
+<div align="center">
 
-A beautiful, simple, and responsive full-stack note-taking application built with Python Flask and vanilla web technologies. Capture and organize your thoughts effortlessly!
+# 📝 QuickNote
+
+### A beautiful, full-stack note-taking application
+
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-3.0-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Render-46E3B7?style=for-the-badge)](https://quick-note-app.onrender.com)
+[![GitHub stars](https://img.shields.io/github/stars/Harishganth-0704/-Quick-Note-Application.?style=for-the-badge&color=yellow)](https://github.com/Harishganth-0704/-Quick-Note-Application./stargazers)
+[![GitHub license](https://img.shields.io/github/license/Harishganth-0704/-Quick-Note-Application.?style=for-the-badge)](LICENSE)
+
+<br/>
+
+> **Capture your thoughts effortlessly** — A modern note-taking app with a stunning glassmorphism UI, backed by a Python Flask REST API and SQLite database.
+
+</div>
+
+---
 
 ## ✨ Features
-- **Modern Glassmorphism UI**: A visually stunning interface with micro-animations and gradients.
-- **Responsive Design**: Works perfectly on both desktop and mobile devices.
-- **RESTful API**: Clean backend architecture using Python Flask.
-- **Persistent Storage**: Notes are safely stored in a local SQLite database.
-- **Real-time UI Updates**: Notes load instantly without page reloads using asynchronous JavaScript fetch APIs.
+
+- 🎨 **Modern Glassmorphism UI** — Stunning dark theme with animated background blobs
+- 💾 **Persistent Storage** — Notes saved to SQLite database, survive page refresh
+- ⚡ **Real-time Updates** — Notes appear instantly without page reloads
+- 📱 **Fully Responsive** — Works perfectly on desktop, tablet, and mobile
+- 🔒 **No localStorage** — All data stored securely on the backend
+- 🃏 **Card Layout** — Notes displayed in a beautiful grid card format
+- ⏱️ **Timestamps** — Every note shows when it was created
+
+---
+
+## 🖥️ Live Demo
+
+👉 **[https://quick-note-app.onrender.com](https://quick-note-app.onrender.com)**
+
+---
 
 ## 🛠️ Tech Stack
-**Frontend:**
-- HTML5
-- CSS3 (Custom Variables, Flexbox/Grid, Animations)
-- Vanilla JavaScript (Fetch API, DOM Manipulation)
 
-**Backend:**
-- Python 3.x
-- Flask (Web Framework)
-- SQLite3 (Database)
-- flask-cors
+| Layer | Technology |
+|---|---|
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
+| **Backend** | Python, Flask |
+| **Database** | SQLite3 |
+| **Fonts** | Google Fonts (Outfit) |
+| **Icons** | Font Awesome 6 |
+| **Deployment** | Render.com |
 
-## 🚀 Getting Started
+---
 
-Follow these steps to run the project locally on your machine.
+## 📡 API Endpoints
 
-### Prerequisites
-Make sure you have Python installed on your system. You can download it from [python.org](https://www.python.org/).
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/notes` | Fetch all saved notes |
+| `POST` | `/add-note` | Save a new note |
 
-### Installation
+### Example Request
+```json
+POST /add-note
+Content-Type: application/json
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Harishganth-0704/-Quick-Note-Application.git
-   cd -Quick-Note-Application
-   ```
+{
+  "note": "This is my first note!"
+}
+```
 
-2. **Install dependencies:**
-   It is recommended to use a virtual environment, but you can also install directly:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Example Response
+```json
+{
+  "id": 1,
+  "note": "This is my first note!",
+  "created_at": "2026-05-28T12:00:00Z"
+}
+```
 
-3. **Run the backend server:**
-   Navigate into the `backend` folder and start the Flask server:
-   ```bash
-   cd backend
-   python app.py
-   ```
-   *(This will automatically create the `notes.db` database file on the first run).*
-
-4. **Open the App:**
-   Open your browser and navigate to:
-   [http://127.0.0.1:5001](http://127.0.0.1:5001)
+---
 
 ## 📁 Project Structure
 
-```text
+```
 Quick Note Application/
 ├── backend/
-│   ├── app.py              # Flask REST API and database configuration
-│   └── notes.db            # SQLite database (auto-generated)
+│   ├── app.py              ← Flask REST API & SQLite setup
+│   └── notes.db            ← SQLite database (auto-generated)
 ├── frontend/
-│   ├── index.html          # Main HTML structure
-│   ├── style.css           # Premium styling and animations
-│   └── script.js           # Frontend logic and API integration
-└── requirements.txt        # Python backend dependencies
+│   ├── index.html          ← Main HTML structure
+│   ├── style.css           ← Glassmorphism UI & animations
+│   └── script.js           ← Frontend logic & Fetch API calls
+├── Procfile                ← Render.com deployment config
+├── requirements.txt        ← Python dependencies
+├── .gitignore
+└── README.md
 ```
 
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
+---
 
-## 📝 License
+## 🚀 Run Locally
+
+### Prerequisites
+- Python 3.x installed → [python.org](https://python.org)
+- Git installed
+
+### Steps
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Harishganth-0704/-Quick-Note-Application.
+cd "-Quick-Note-Application."
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Start the Flask server
+cd backend
+python app.py
+```
+
+### 4. Open in browser
+```
+http://127.0.0.1:5001
+```
+
+> The `notes.db` SQLite database is created automatically on first run.
+
+---
+
+## 🗄️ Database Schema
+
+```sql
+CREATE TABLE notes (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    note       TEXT    NOT NULL,
+    created_at TEXT    NOT NULL
+);
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m "Add my feature"`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
 This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Harishganth](https://github.com/Harishganth-0704)
+
+⭐ **Star this repo if you found it helpful!** ⭐
+
+</div>
